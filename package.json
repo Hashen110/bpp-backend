@@ -29,7 +29,7 @@
     "nodemon": "nodemon ./bin/www --trace-deprecation --trace-exit --trace-sigint --trace-sync-io --trace-tls --trace-uncaught --trace-warnings --track-heap-objects",
     "dev:nolint": "DEBUG=bpp-backend:* npm run nodemon",
     "dev": "npm run lint && npm run dev:nolint",
-    "test": "jest --setupFiles dotenv/config --coverage --forceExit"
+    "test": "jest --setupFiles dotenv/config --coverage --forceExit --silent"
   },
   "dependencies": {
     "@binance/connector": "^3.0.0-rc.2",
