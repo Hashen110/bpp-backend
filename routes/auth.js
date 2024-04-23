@@ -125,7 +125,7 @@ router.post('/refresh', async (req, res) => {
 });
 
 router.get('/me', async (req, res) => {
-  const authorization = req.headers.authorization;
+  const { authorization } = req.headers;
   if (isBlank(authorization)) {
     return res.sendStatus(401);
   }
