@@ -10,7 +10,7 @@ router.get('/', async (_, res) => {
   try {
     const { rows, rowCount } = await execute('SELECT * FROM users');
     rows.forEach((row) => {
-      delete row.password;
+      delete row.password; // eslint-disable-line no-param-reassign
     });
     return res.json({ users: rows, count: rowCount });
   } catch (e) {
