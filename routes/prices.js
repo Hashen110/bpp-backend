@@ -11,9 +11,8 @@ router.get('/', async (req, res) => {
     const response = await axios.get(`${process.env.BPP_MODEL_SERVICE_URL}/predict?pred_days=30`);
     if (response.data) {
       return res.json(response.data);
-    } else {
-      return res.sendStatus(500);
     }
+    return res.sendStatus(500);
   } catch (e) {
     logger.error(e);
     return res.sendStatus(500);
@@ -35,9 +34,8 @@ router.get('/price', async (req, res) => {
         date,
         price: response.data.predictions[response.data.predictions.length - 1],
       });
-    } else {
-      return res.sendStatus(500);
     }
+    return res.sendStatus(500);
   } catch (e) {
     logger.error(e);
     return res.sendStatus(500);
